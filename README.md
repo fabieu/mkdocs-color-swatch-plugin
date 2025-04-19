@@ -1,0 +1,1 @@
+# mkdocs-color-swatch-plugin
