@@ -1,0 +1,7 @@
+site_name: Local Plugin Demo
+
+plugins:
+  - color-swatch
+
+watch:
+  - mkdocs_color_swatch_plugin
