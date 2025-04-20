@@ -1,4 +1,4 @@
-name: Test Python Package
+name: Run pytest
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: Run tests with pytest
+    name: pytest
     runs-on: ubuntu-latest
     container:
       image: ${{ vars.PYTHON_IMAGE }}
@@ -25,4 +25,4 @@ jobs:
         run: poetry install
 
       - name: Run pytest
-        run: poetry run pytest
+        run: poetry run pytest -v

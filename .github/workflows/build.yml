@@ -1,4 +1,4 @@
-name: Build and publish mkdocs-color-swatch-plugin
+name: Build and publish
 
 on:
   workflow_dispatch:
@@ -58,6 +58,8 @@ jobs:
       - variables
       - publish
     timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
       - name: Release
         uses: softprops/action-gh-release@v2
