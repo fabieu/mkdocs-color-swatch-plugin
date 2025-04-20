@@ -1,4 +1,4 @@
-site_name: Local Plugin Demo
+site_name: mkdocs-color-swatch-plugin demo
 
 plugins:
   - color-swatch
