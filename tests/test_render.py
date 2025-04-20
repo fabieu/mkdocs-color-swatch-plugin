@@ -1,45 +1,43 @@
-from markdown import Markdown
+import markdown
+import pytest
 
 from mkdocs_color_swatch_plugin.color_swatch import ColorSwatchExtension
-from mkdocs_color_swatch_plugin.plugin import ColorSwatchPlugin, EMBEDDED_CSS
 
-# Global instances to reuse across all tests
-MARKDOWN_ENGINE = Markdown(extensions=[ColorSwatchExtension()])
-PLUGIN = ColorSwatchPlugin()
+# Global Markdown instance that can be reused
+md = markdown.Markdown(extensions=[ColorSwatchExtension()])
 
 
-def render_markdown(text, use_plugin=False):
-    html = MARKDOWN_ENGINE.convert(text)
-    if use_plugin:
-        html = PLUGIN.on_page_content(html)
-    return html
+@pytest.mark.parametrize("input_md,expected_style", [
+    (":color[#3498db]:", "background-color: #3498db;"),
+    (":color[#fff]:", "background-color: #fff;"),
+    (":color[rgb(255,0,0)]:", "background-color: rgb(255,0,0);"),
+    (":color[rgba(10,20,30,0.5)]:", "background-color: rgba(10,20,30,0.5);"),
+])
+def test_color_swatch_renders_correctly(input_md, expected_style):
+    # Use global Markdown instance, but reset between tests
+    md.reset()
+    html = md.convert(input_md)
 
-
-def test_swatch_renders_html():
-    html = render_markdown('[[color: #e74c3c | Red]]')
     assert 'class="color-swatch"' in html
-    assert 'data-tooltip="#e74c3c – Red"' in html
+    assert expected_style in html
+
+    # Tooltip should show the color code
+    code_start = input_md.find('[') + 1
+    code_end = input_md.find(']')
+    color_code = input_md[code_start:code_end].strip()
+
+    assert f'data-tooltip="{color_code}"' in html
 
 
-def test_plain_text_has_no_swatch():
-    html = render_markdown('This is just plain text.')
+@pytest.mark.parametrize("invalid_md", [
+    ":color[#12g]:",  # Invalid hex
+    ":color[rgb(100,200)]:",  # Missing channel
+    ":color[rgba(10,20,30)]:",  # Missing alpha
+    ":color[rgba(10,20,30,foo)]:",  # Invalid alpha
+    ":color[#fff|]:",  # Pipe with nothing
+    ":color[red]:",  # Named color not supported
+])
+def test_color_swatch_does_not_render_on_invalid(invalid_md):
+    md.reset()
+    html = md.convert(invalid_md)
     assert 'class="color-swatch"' not in html
-
-
-def test_css_injected_when_needed():
-    html = render_markdown('[[color: #3498db | Blue]]', use_plugin=True)
-    assert EMBEDDED_CSS.strip() in html
-    assert 'class="color-swatch"' in html
-
-
-def test_css_not_injected_for_plain_text():
-    html = render_markdown('Nothing to see here.', use_plugin=True)
-    assert EMBEDDED_CSS.strip() not in html
-
-
-def test_rgb_and_rgba_colors_render():
-    html = render_markdown('[[color: rgb(255,0,0) | Red]]')
-    assert 'rgb(255,0,0)' in html
-
-    html = render_markdown('[[color: rgba(0,255,0,0.5) | Transparent Green]]')
-    assert 'rgba(0,255,0,0.5)' in html
