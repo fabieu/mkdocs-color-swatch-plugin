@@ -1,0 +1,7 @@
+site_name: mkdocs-color-swatch-plugin demo
+
+plugins:
+  - color-swatch
+
+watch:
+  - mkdocs_color_swatch_plugin
