@@ -11,12 +11,13 @@ jobs:
   test:
     name: pytest
     runs-on: ubuntu-latest
-    container:
-      image: ${{ vars.PYTHON_IMAGE }}
     timeout-minutes: 5
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
 
       - name: Install Poetry
         run: pip install poetry==${{ vars.POETRY_VERSION }}

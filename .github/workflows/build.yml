@@ -36,12 +36,13 @@ jobs:
     needs:
       - test
       - variables
-    container:
-      image: ${{ vars.PYTHON_IMAGE }}
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
 
       - name: Install poetry
         run: pip install poetry==${{ vars.POETRY_VERSION }}
