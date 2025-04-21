@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - mkdocs_color_swatch_plugin
+      - mkdocs_color_swatch_plugin/**
       - mkdocs.yml
       - docs/**
   workflow_dispatch:
