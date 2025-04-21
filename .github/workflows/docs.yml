@@ -23,11 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install poetry and mkdocs
-        run: pip install poetry==${{ vars.POETRY_VERSION }} mkdocs
+      - name: Install poetry
+        run: pip install poetry==${{ vars.POETRY_VERSION }}
 
       - name: Install project dependencies
         run: poetry install
 
       - name: Deploy mkdocs to GitHub Pages
-        run: mkdocs gh-deploy --force
+        run: poetry run mkdocs gh-deploy --force
