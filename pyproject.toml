@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-color-swatch-plugin"
-version = "0.1.0"
+version = "0.2.0"
 description = "A MkDocs plugin for inline color swatches with tooltip and hover effects"
 authors = [
     { name = "Fabian Eulitz", email = "dev@sustineo.de" }
