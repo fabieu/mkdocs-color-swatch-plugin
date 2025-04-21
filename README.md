@@ -3,12 +3,12 @@
 > A lightweight plugin that lets you insert inline color swatches into your Markdown docs using a simple, readable
 > syntax.
 
-![PyPI](https://img.shields.io/pypi/v/mkdocs-color-swatch-plugin?style=for-the-badge)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mkdocs-color-swatch-plugin?style=for-the-badge)
-[![GitHub pipeline status](https://img.shields.io/github/actions/workflow/status/fabieu/mkdocs-color-swatch-plugin/build.yml?style=for-the-badge)](https://github.com/fabieu/mkdocs-color-swatch-plugin/actions)
-[![GitHub issues](https://img.shields.io/github/issues-raw/fabieu/mkdocs-color-swatch-plugin?style=for-the-badge)](https://github.com/fabieu/mkdocs-color-swatch-plugin/issues)
-[![GitHub merge requests](https://img.shields.io/github/issues-pr/fabieu/mkdocs-color-swatch-plugin?style=for-the-badge)](https://github.com/fabieu/mkdocs-color-swatch-plugin/pulls)
-[![GitHub](https://img.shields.io/github/license/fabieu/mkdocs-color-swatch-plugin?style=for-the-badge)](https://github.com/fabieu/mkdocs-color-swatch-plugin/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
+[![GitHub pipeline status](https://img.shields.io/github/actions/workflow/status/fabieu/mkdocs-color-swatch-plugin/build.yml)](https://github.com/fabieu/mkdocs-color-swatch-plugin/actions)
+[![GitHub issues](https://img.shields.io/github/issues-raw/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/issues)
+[![GitHub merge requests](https://img.shields.io/github/issues-pr/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/pulls)
+[![GitHub](https://img.shields.io/github/license/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/blob/main/LICENSE)
 
 ## ⭐ Features
 
@@ -19,6 +19,8 @@
   - RGB colors - `rgb(255, 0, 0)`
   - RGBA colors - `rgba(255, 0, 0, 0.5)`
 - No CSS setup required — styles are embedded automatically
+
+**Visit demo:** https://fabieu.github.io/mkdocs-color-swatch-plugin/
 
 ---
 
