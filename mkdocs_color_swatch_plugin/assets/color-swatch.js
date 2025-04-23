@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
         colorSwatch.addEventListener('click', () => {
             const tooltipText = colorSwatch.getAttribute('data-tooltip')?.trim();
             if (tooltipText) {
-                copyToClipboard(tooltipText);
+                navigator.clipboard.writeText(tooltipText).then(() => {
+                    colorSwatch.classList.add("clicked");
+
+                    setTimeout(() => {
+                        colorSwatch.classList.remove("clicked");
+                    }, 2000);
+                });
             }
         });
     });
 });
-
-const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-};
