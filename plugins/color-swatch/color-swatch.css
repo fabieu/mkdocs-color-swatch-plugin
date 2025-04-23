@@ -1,0 +1,50 @@
+.color-swatch {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    width: 1em;
+    height: 1em;
+    margin: 0 0.1em;
+    border-radius: 0.25rem;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-swatch::after {
+    position: absolute;
+    left: 50%;
+    bottom: 110%;
+    z-index: 10;
+
+    display: block;
+
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+
+    background: #333333;
+    color: #ffffff;
+    font-size: 0.75rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.color-swatch:not(.clicked):hover::after {
+    content: attr(data-tooltip);
+    opacity: 1;
+}
+
+.color-swatch.clicked::after {
+    content: "Copied!";
+    opacity: 1;
+}
