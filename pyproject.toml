@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.4.0"
+pytest = "^8.4.1"
 
 [project.entry-points."mkdocs.plugins"]
 color-swatch = "mkdocs_color_swatch_plugin.plugin:ColorSwatchPlugin"
