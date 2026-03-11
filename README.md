@@ -3,12 +3,20 @@
 > A lightweight plugin that lets you insert inline color swatches into your Markdown docs using a simple, readable
 > syntax.
 
-[![PyPI](https://img.shields.io/pypi/v/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
-[![GitHub pipeline status](https://img.shields.io/github/actions/workflow/status/fabieu/mkdocs-color-swatch-plugin/build.yml)](https://github.com/fabieu/mkdocs-color-swatch-plugin/actions)
-[![GitHub issues](https://img.shields.io/github/issues-raw/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/issues)
-[![GitHub merge requests](https://img.shields.io/github/issues-pr/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/pulls)
-[![GitHub](https://img.shields.io/github/license/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/releases/latest)
+[![GitHub Issues](https://img.shields.io/github/issues/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/pulls)
+[![License](https://img.shields.io/github/license/fabieu/mkdocs-color-swatch-plugin)](https://github.com/fabieu/mkdocs-color-swatch-plugin/blob/main/LICENSE)
+
+[![PyPI Version](https://img.shields.io/pypi/v/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/mkdocs-color-swatch-plugin)](https://pypi.org/project/mkdocs-color-swatch-plugin/)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=alert_status)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=security_rating)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=fabieu_mkdocs-color-swatch-plugin&metric=sqale_index)](https://sonarcloud.io/summary/overall?id=fabieu_mkdocs-color-swatch-plugin)
 
 ## ⭐ Features
 
