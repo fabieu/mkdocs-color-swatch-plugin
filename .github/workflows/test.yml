@@ -7,10 +7,6 @@ on:
   workflow_call:
   workflow_dispatch:
 
-env:
-  PYTHON_VERSION: "3.14"
-  POETRY_VERSION: "2.3.2"
-
 jobs:
   test:
     name: Run tests
@@ -25,10 +21,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: ${{ vars.PYTHON_VERSION }}
 
       - name: Install poetry
-        run: pip install poetry==${{ env.POETRY_VERSION }}
+        run: pip install poetry==${{ vars.POETRY_VERSION }}
 
       - name: Configure poetry
         run: poetry config virtualenvs.create false
