@@ -1,4 +1,4 @@
-name: Run pytest
+name: Run tests
 
 on:
   pull_request:
@@ -7,23 +7,34 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  PYTHON_VERSION: "3.14"
+  POETRY_VERSION: "2.3.2"
+
 jobs:
   test:
-    name: pytest
+    name: Run tests
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: read
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Install Poetry
-        run: pip install poetry==${{ vars.POETRY_VERSION }}
+      - name: Install poetry
+        run: pip install poetry==${{ env.POETRY_VERSION }}
 
-      - name: Install dependencies
-        run: poetry install
+      - name: Configure poetry
+        run: poetry config virtualenvs.create false
+
+      - name: Install project dependencies
+        run: poetry install --no-interaction
 
       - name: Run pytest
         run: poetry run pytest -v
